@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 
 byte option = 1;
 
+
 while (true)
 {
     Console.Clear();
@@ -176,7 +177,7 @@ while (true)
                 }
                 #endregion
             }
-            #endregion
         }
     }
+    #endregion
 }
