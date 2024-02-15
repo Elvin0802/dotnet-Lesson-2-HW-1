@@ -1,9 +1,6 @@
-﻿
-using System.Security.Cryptography;
+﻿sbyte option = 1;
 
-sbyte option = 1;
-
-
+// Main While
 while (true)
 {
     Console.Clear();
