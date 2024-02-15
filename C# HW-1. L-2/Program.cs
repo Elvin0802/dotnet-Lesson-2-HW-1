@@ -107,81 +107,66 @@ while (true)
 
                 if (c2_key.Key == ConsoleKey.Enter)
                 {
-                    Console.Write("\n\n\n");
+                    if (option2 == 0)
+                    { Thread.Sleep(700); break; }
+
+                    // Variables
                     double num1 = 0.0, num2 = 0.0, result = 0.0;
+                    char oper = '=';
+
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.Write("\n\n\t\tEnter the First Number : ");
+                    double.TryParse(Console.ReadLine(), out num1);
+
+                    Console.Write("\n\t\tEnter the Second Number : ");
+                    double.TryParse(Console.ReadLine(), out num2);
 
                     if (option2 == 1)
                     {
-                        Console.WriteLine("\n\tEnter the 1st number : ");
-                        double.TryParse(Console.ReadLine(), out num1);
-                        Console.WriteLine("\n\tEnter the 2nd number : ");
-                        double.TryParse(Console.ReadLine(), out num2);
-
                         result = num1+num2;
-
-                        Console.WriteLine($"\n{num1} + {num2} = {result} ..");
+                        oper = '+';
                     }
                     else if (option2 == 2)
                     {
-                        Console.WriteLine("\n\tEnter the 1st number : ");
-                        double.TryParse(Console.ReadLine(), out num1);
-                        Console.WriteLine("\n\tEnter the 2nd number : ");
-                        double.TryParse(Console.ReadLine(), out num2);
-
                         result = num1-num2;
-
-                        Console.WriteLine($"\n{num1} - {num2} = {result} ..");
+                        oper = '-';
                     }
                     else if (option2 == 3)
                     {
-                        Console.WriteLine("\n\tEnter the 1st number : ");
-                        double.TryParse(Console.ReadLine(), out num1);
-                        Console.WriteLine("\n\tEnter the 2nd number : ");
-                        double.TryParse(Console.ReadLine(), out num2);
-
                         result = num1*num2;
-
-                        Console.WriteLine($"\n{num1} * {num2} = {result} ..");
+                        oper = '*';
                     }
                     else if (option2 == 4)
                     {
-                        Console.WriteLine("\n\tEnter the 1st number : ");
-                        double.TryParse(Console.ReadLine(), out num1);
-                        Console.WriteLine("\n\tEnter the 2nd number : ");
-                        double.TryParse(Console.ReadLine(), out num2);
-
                         if (num1 == 0.0 || num2 == 0.0)
                         {
                             Console.ForegroundColor = ConsoleColor.DarkRed;
-                            Console.WriteLine("Can not Divide by Zero !!!");
-                            Thread.Sleep(1200);
+                            Console.WriteLine("\n\n\t\tCan not Divide by Zero !!!");
+                            Thread.Sleep(1800);
                             Console.ForegroundColor = ConsoleColor.White;
                             continue;
                         }
 
                         result = num1/num2;
-
-                        Console.WriteLine($"\n{num1} / {num2} = {result} ..");
+                        oper = '/';
                     }
                     else if (option2 == 5)
                     {
-                        Console.WriteLine("\n\tEnter the 1st number : ");
-                        double.TryParse(Console.ReadLine(), out num1);
-                        Console.WriteLine("\n\tEnter the 2nd number : ");
-                        double.TryParse(Console.ReadLine(), out num2);
-
                         result = 1.0;
 
                         for (double i = 0.0; i < num2; i++)
                             result*= num1;
 
-                        Console.WriteLine($"\n{num1} ^ {num2} = {result} ..");
+                        oper = '^';
                     }
-                    else if (option2 == 0)
-                    {
-                        Thread.Sleep(700);
-                        break;
-                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"\n\n\t\tResult :  {num1} {oper} {num2} = {result}\t");
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n\n\n\tPress any key to continue...");
+                    Console.ReadKey();
+
                 }
                 #endregion
             }
