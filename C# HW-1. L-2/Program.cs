@@ -147,8 +147,6 @@ while (isC)
                                 Console.Write("\n\t\tEnter the Second Number : ");
                                 double.TryParse(Console.ReadLine(), out num2);
 
-
-
                                 break;
                         }
 
